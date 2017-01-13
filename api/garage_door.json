@@ -1,0 +1,13 @@
+{
+  "config": [{
+	"auth_key":  "",
+	"authorized_clients":  ["127.0.0.1", "10.0.0.76"],
+	"authorized_users": ["user1", "user2"],
+	"button_press_in_seconds": 1.5,
+	"doors": ["double", "single"],
+	"double_door_pin": 7,
+	"single_door_pin": 11,
+	"alert_phone_number": "+15555551234",
+	"security_camera_url": "http://10.0.0.80/snapshot.cgi"
+    }]
+}
