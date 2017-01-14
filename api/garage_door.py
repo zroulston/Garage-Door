@@ -27,6 +27,7 @@ except:
 urls = (
 	'/', 'index',
 	'/garage_door', 'garage_door',
+	'/get_image', 'get_image',
 	'/.*', 'catch_all'
 )
 
@@ -45,6 +46,15 @@ class catch_all:
 
     def POST(self):
         return return404("URI not found")
+
+class get_image:
+	def GET(self):
+   	     return return405()
+
+	def POST(self):
+		web.header('Content-Type', 'application/json')
+        	web.header('Access-Control-Allow-Origin', '*')
+		return "{ \"response\": { \"security_camera_image\": \"%s\" } }\n"%(get_security_camera_image(security_camera_url))
 
 class garage_door(object):
     def GET(self):
@@ -66,20 +76,20 @@ class garage_door(object):
 	except:
 		return return500("Invalid or missing input parameter")
 
-	#Check client authentication
-	if client_key.upper() != auth_key.upper():
-		return return403() 
-
-	#Check user in list
-	if user.lower() not in authorized_users:
-		return return403()
-
 	#Check if door paramater is valid
 	if door.lower() not in doors:
 		return return404()
 
+        #Check client authentication
+        if client_key.upper() != auth_key.upper():
+                return return403()
+
+        #Check user in list
+        if user.lower() not in authorized_users:
+                return return403()
+
 	#get image from securit camera
-	if get_image == "True":
+	if get_image.lower() == "true":
 		security_camera_image = get_security_camera_image(security_camera_url)
 	else:
 		security_camera_image = "Not requested"
@@ -93,8 +103,6 @@ class garage_door(object):
 		sendSnsAlert("Single")
 		alert_fired = True
         return return200(door,alert_fired,is_test,client_ip,security_camera_image) 
-
-
 
 def return200(door,alert_fired,is_test,client_ip,security_camera_image):
         web.header('Content-Type', 'application/json')
