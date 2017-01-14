@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+
+setTimeout(function(){
+  window.location.reload(1);
+}, 8000);
+
+function get_image(){
+	        $.ajax({
+                type: "POST",
+                url: "/get_image", 
+                success: function( data ){
+                        var image = data.response.security_camera_image;
+                        $('#image').html('<img src="data:/jpeg;base64,' + image + '">')
+                }
+	});
+};
+
+function actuateDoor(door){
+        $.ajax({
+		type: "POST",
+		url: "/garage_door", 
+		data: data_string,
+		error: function( data ){
+			$('#response').html(JSON.stringify(data.response))
+		}
+    });
+};
+
+</script>
+</head>
+<body bgcolor="#cce0ff" class="container"  onload="get_image()">
+
+<div id="image"></div>
+
+<div id="buttons">
+<button class="single" style="display: block; width: 100%;" id="single" onClick="actuateDoor(this.id)">Single Door</button>
+<br/>
+<button class="double" style="display: block; width: 100%;" id="double" onClick="actuateDoor(this.id)">Double Door</button>
+</div>
+<div id="response"></div>
+<style>
+.single{
+  background-color: #3385ff;
+  border: none;
+  color: white;
+  position: absolute;
+  height: 125px;
+  margin: 0 auto;
+  text-align: center;
+  bottom:  0%;
+  font-size: 16px;
+  border-top:solid 2px black;
+  border-top-color: #003d99;
+  border-bottom:solid 2px;
+  border-bottom-color: #003d99;
+}
+.double{
+  background-color: #3385ff;
+  border: none;
+  color: white;
+  position: absolute;
+  height: 125px;
+  margin: 0 auto;
+  text-align: center;
+  bottom:  26%;
+  font-size: 16px;
+  border-top:solid 2px;
+  border-top-color: #003d99;
+  border-bottom:solid 2px;
+  border-bottom-color: #003d99;
+} 
+img {
+  padding-left: 8px;
+  padding-right: 25px;
+  padding-top:  15px; 
+  padding-bottom: 15px;
+  max-width: 95%; 
+  height: auto; 
+}
+response {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #003d99;
+    padding: 10px;
+}
+.container
+{
+  position:absolute;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+  border:solid 2px #003d99;
+  overflow:auto;
+}
+</style>
+</body>
+</html>
+
