@@ -9,7 +9,7 @@
 
 setTimeout(function(){
   window.location.reload(1);
-}, 8000);
+}, 15000);
 
 function get_image(){
 	        $.ajax({
@@ -23,6 +23,7 @@ function get_image(){
 };
 
 function actuateDoor(door){
+        var data_string = '{"door" : "'+ door +'", "auth_key" : "14ba5723f2cd11983f7eeeac09601bA8", "is_test" : "False", "user": "zach", "get_image": "False"}'
         $.ajax({
 		type: "POST",
 		url: "/garage_door", 
@@ -35,7 +36,7 @@ function actuateDoor(door){
 
 </script>
 </head>
-<body bgcolor="#cce0ff" class="container"  onload="get_image()">
+<body bgcolor="#e6f0ff" class="container"  onload="get_image()">
 <center>
 <div id="image"></div>
 </center>
@@ -52,7 +53,6 @@ function actuateDoor(door){
   color: white;
   position: absolute;
   height: 125px;
-  margin: 0 auto;
   text-align: center;
   bottom:  0%;
   font-size: 16px;
@@ -60,6 +60,7 @@ function actuateDoor(door){
   border-top-color: #003d99;
   border-bottom:solid 2px;
   border-bottom-color: #003d99;
+  border-radius: 25px;
 }
 .double{
   background-color: #3385ff;
@@ -67,7 +68,6 @@ function actuateDoor(door){
   color: white;
   position: absolute;
   height: 125px;
-  margin: 0 auto;
   text-align: center;
   bottom:  26%;
   font-size: 16px;
@@ -75,6 +75,7 @@ function actuateDoor(door){
   border-top-color: #003d99;
   border-bottom:solid 2px;
   border-bottom-color: #003d99;
+  border-radius: 25px;
 } 
 img {
   padding-left: 8px;
