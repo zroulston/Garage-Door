@@ -6,22 +6,6 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
-
-setTimeout(function(){
-  window.location.reload(1);
-}, 15000);
-
-function get_image(){
-	        $.ajax({
-                type: "POST",
-                url: "/get_image", 
-                success: function( data ){
-                        var image = data.response.security_camera_image;
-                        $('#image').html('<img src="data:/jpeg;base64,' + image + '">')
-                }
-	});
-};
-
 function actuateDoor(door){
         var data_string = '{"door" : "'+ door +'", "auth_key" : "14ba5723f2cd11983f7eeeac09601bA8", "is_test" : "False", "user": "zach", "get_image": "False"}'
         $.ajax({
@@ -33,63 +17,44 @@ function actuateDoor(door){
 		}
     });
 };
-
 </script>
 </head>
-<body bgcolor="#e6f0ff" class="container"  onload="get_image()">
+<body bgcolor="#C3C4C6" class="container">
 <center>
 <div id="image"></div>
+<img src="/get_video">
 </center>
 <div id="buttons">
 <button class="single" style="display: block; width: 100%;" id="single" onClick="actuateDoor(this.id)">Single Door</button>
 <br/>
 <button class="double" style="display: block; width: 100%;" id="double" onClick="actuateDoor(this.id)">Double Door</button>
-</div>
-<div id="response"></div>
 <style>
 .single{
   background-color: #3385ff;
-  border: none;
   color: white;
   position: absolute;
   height: 125px;
   text-align: center;
   bottom:  4%;
   font-size: 16px;
-  border-top:solid 2px black;
-  border-top-color: #003d99;
-  border-bottom:solid 2px;
-  border-bottom-color: #003d99;
+  border:solid 2px #003d99;
   border-radius: 25px;
 }
 .double{
   background-color: #3385ff;
-  border: none;
   color: white;
   position: absolute;
   height: 125px;
   text-align: center;
   bottom:  28%;
   font-size: 16px;
-  border-top:solid 2px;
-  border-top-color: #003d99;
-  border-bottom:solid 2px;
-  border-bottom-color: #003d99;
+  border:solid 2px #003d99;
   border-radius: 25px;
 } 
 img {
-  padding-left: 8px;
-  padding-right: 25px;
-  padding-top:  15px; 
-  padding-bottom: 15px;
-  max-width: 95%; 
+  max-width: 98%; 
   height: auto;
-}
-response {
-    margin: auto;
-    width: 60%;
-    border: 3px solid #003d99;
-    padding: 10px;
+  border:solid 2px #003d99;
 }
 .container
 {
@@ -98,7 +63,6 @@ response {
   bottom:0;
   right:0;
   left:0;
-  border:solid 2px #003d99;
   overflow:auto;
 }
 </style>
