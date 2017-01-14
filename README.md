@@ -15,6 +15,6 @@ Software:<br/>
 
 <h2>Example:</h2><br/>
 The API needs to be called with a POST.<br/>
-curl example:<br/>
+<br/>Curl example:<br/>
 <br/>
 `curl -i -H "Accept: application/json" -X POST -d '{"door" : "single", "auth_key" : "xxx123", "is_test" : "True", "user": "user1", "get_image": "True"}' http://127.0.0.1:8080/garage_door`
