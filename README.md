@@ -13,7 +13,7 @@ Software:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Python 2.7.9<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amazon SNS<br/>
 
-<h2>Example:</h2><br/>
+<h2>Example:</h2>
 The API needs to be called with a POST.<br/>
 <br/>Curl example:<br/>
 <br/>
