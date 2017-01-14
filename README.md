@@ -2,7 +2,7 @@
 Raspberry Pi based garage door opener. This project consists of two parts, an API and a mobile web client.
 
 Hardware:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Raspberry Pi P1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Raspberry Pi P1<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SunFounder 2 Channel DC 5V Relay Module<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Genie Intellicode Gitr-3 Remote<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Foscam FI8910W<br/>
