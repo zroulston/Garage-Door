@@ -8,9 +8,9 @@ Hardware:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Foscam FI8910W<br/>
 
 Software:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Raspbian GNU/Linux 8<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apache/2.4.10<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Python 2.7.9<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Raspbian GNU/Linux<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nginx/1.6<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Python 2.7<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amazon SNS<br/>
 
 <h2>Example:</h2>
