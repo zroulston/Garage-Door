@@ -19,7 +19,7 @@ Software:<br/>
 	"doors": 'single' or 'double'
 	"is_test": 'True' or 'False' If false, the relays will not fire and SNS will not send alert
 	"user": Must be in garage_door.json
-	"get_image": 'True' or 'False' If true, a base64 encoded image served via the security camera URL will be returned.
+	"get_image": 'True' or 'False' If true, a base64 encoded JPEG retrieved from security camera URL
 <h2>Configuration File</h2>
 	**See garage_door.json for example**
 	"authorized_users": Users that are permitted to call API
