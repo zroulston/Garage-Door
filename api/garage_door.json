@@ -1,6 +1,6 @@
 {
   "config": [{
-	"auth_key":  "",
+	"auth_key":  "14ba5723f2cd11983f7eeeac09601bA8",
 	"authorized_clients":  ["127.0.0.1", "10.0.0.76"],
 	"authorized_users": ["user1", "user2"],
 	"button_press_in_seconds": 1.5,
